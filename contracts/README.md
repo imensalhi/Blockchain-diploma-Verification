@@ -3,7 +3,7 @@
 ## 📋 Project Overview
 **Status**: ✅ **FULLY IMPLEMENTED & TESTED**  
 **Contract**: `DiplomaRegistry.sol` - Gas-optimized diploma verification system  
-**Networks**: Local Hardhat + Sepolia Testnet  
+**Networks**: Local Hardhat
 **Security**: OpenZeppelin AccessControl + ReentrancyGuard  
 
 ## 🏆 What We've Built
@@ -90,32 +90,7 @@ npm run deploy:local
 # Contract deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
 ```
 
-### ✅ **Sepolia Testnet (READY)**
-```bash
-# Automated deployment script
-npm run deploy:sepolia:auto
 
-# Deployed and verified on Etherscan ✅
-```
-
-## 📁 Project File Structure
-
-```
-diploma_verif/
-├── 📝 contracts/
-│   ├── DiplomaRegistry.sol      ✅ Main smart contract (COMPLETE)
-│   └── README.md                ✅ This documentation
-├── 🧪 test/
-│   └── DiplomaRegistry.test.js  ✅ 30/30 tests passing
-├── 🚀 ignition/modules/
-│   └── Deploy.js                ✅ Deployment configuration
-├── 🌐 frontend/
-│   └── src/index.html           ✅ Production web application
-├── 📋 scripts/
-│   └── deploy-sepolia.js        ✅ Automated Sepolia deployment
-├── ⚙️ hardhat.config.js         ✅ Multi-network configuration
-└── 🔧 package.json              ✅ Dependencies and scripts
-```
 
 ## 🎯 Smart Contract API Reference
 
@@ -161,115 +136,6 @@ return (
     bytes32 degreeType   // Degree type (if provided)
 );
 ```
-
-## 🔧 Development Setup for Teammates
-
-### **Prerequisites**
-```bash
-# 1. Install Node.js (v18+)
-node --version
-
-# 2. Install dependencies
-npm install
-
-# 3. Install Hardhat globally (optional)
-npm install -g hardhat
-```
-
-### **Local Development Workflow**
-```bash
-# 1. Start local blockchain (Terminal 1)
-npm run node
-# ✅ Blockchain running on http://127.0.0.1:8545
-
-# 2. Deploy contract (Terminal 2)  
-npm run deploy:local
-# ✅ Contract deployed: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-
-# 3. Run tests
-npm test
-# ✅ 30/30 tests passing
-
-# 4. Start frontend (Terminal 3)
-cd frontend && python -m http.server 8080
-# ✅ Application: http://localhost:8080
-```
-
-### **Testnet Deployment**
-```bash
-# 1. Configure environment
-echo "PRIVATE_KEY=your_private_key_here" >> .env
-
-# 2. Get Sepolia ETH
-# Visit: https://sepoliafaucet.com/
-
-# 3. Deploy to Sepolia
-npm run deploy:sepolia:auto
-# ✅ Deployed and verified on Etherscan
-```
-
-## 🌐 Frontend Integration
-
-### **Contract ABI Location**
-```bash
-# After compilation, ABI available at:
-artifacts/contracts/DiplomaRegistry.sol/DiplomaRegistry.json
-
-# Frontend automatically loads from:
-frontend/src/index.html (embedded configuration)
-```
-
-### **Network Configuration**
-```javascript
-// Supported networks
-const networks = {
-    localhost: {
-        chainId: 31337,
-        contractAddress: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
-    },
-    sepolia: {
-        chainId: 11155111, 
-        contractAddress: "0x..." // Auto-updated after deployment
-    }
-};
-```
-
-## 🔍 Example Usage Scenarios
-
-### **1. Admin Authorizes University**
-```javascript
-// Connect as admin account
-await contract.authorizeUniversity(
-    "University of Sfax", 
-    "0x742d35Cc6435C4532CC53d05877cd6dC81Ab1C5E"
-);
-// ✅ University can now issue diplomas
-```
-
-### **2. University Issues Diploma**
-```javascript
-// University uploads PDF, system generates hash
-const pdfHash = "0x1234..."; // Keccak-256 of PDF
-await contract.issueDiploma(
-    pdfHash,
-    "University of Sfax",
-    ethers.utils.formatBytes32String("MASTER_CS")
-);
-// ✅ Diploma recorded on blockchain
-```
-
-### **3. Public Verification**
-```javascript
-// Anyone can verify diploma authenticity
-const result = await contract.verifyDiploma(
-    pdfHash,
-    "University of Sfax"
-);
-console.log("Valid:", result.isValid);
-console.log("Issued:", new Date(result.issuedAt * 1000));
-// ✅ Instant verification result
-```
-
 ## 📊 Performance Metrics
 
 ### **Gas Costs (Optimized)**
@@ -294,53 +160,3 @@ console.log("Issued:", new Date(result.issuedAt * 1000));
 - **No Personal Data**: Only diploma hashes stored on-chain
 - **PDF Content**: Never transmitted to blockchain
 - **University Info**: Only names and addresses (public)
-
-## 🤝 Team Coordination
-
-### **For Frontend Developers**
-- ✅ Contract ABI available in `artifacts/` after compilation
-- ✅ Example integration code in `frontend/src/index.html`
-- ✅ Network switching handled automatically
-- ✅ Error handling patterns documented
-
-### **For Documentation Team**
-- ✅ Complete function reference above
-- ✅ Gas costs and performance metrics provided
-- ✅ Security model documented
-- ✅ Deployment addresses tracked
-
-### **For Testing Team**
-- ✅ Comprehensive test suite in `test/DiplomaRegistry.test.js`
-- ✅ All edge cases covered
-- ✅ Security scenarios tested
-- ✅ Integration workflows validated
-
-## 🎉 Project Status Summary
-
-### ✅ **DELIVERABLES COMPLETED**
-
-1. **✅ Smart Contract**: Fully implemented, tested, and optimized
-2. **✅ Security Audit**: OpenZeppelin standards, comprehensive testing
-3. **✅ Gas Optimization**: Efficient data structures and storage patterns
-4. **✅ Testing Suite**: 30/30 tests passing with full coverage
-5. **✅ Deployment Scripts**: Local and testnet deployment automation
-6. **✅ Documentation**: Complete API reference and setup guides
-7. **✅ Frontend Integration**: Production-ready web application
-8. **✅ Multi-Network Support**: Localhost + Sepolia testnet
-
-### 🎯 **Ready for Production**
-
-**This smart contract system is fully functional, well-tested, and ready for real-world deployment. All core features are implemented according to specifications.**
-
----
-
-## 📞 Support & Resources
-
-**GitHub Repository**: https://github.com/sambett/Blockchain-diploma-Verification  
-**Documentation**: See `docs/README.md` for detailed guides  
-**Issues**: Report bugs via GitHub Issues  
-**Team Chat**: Project communication channel  
-
-**Last Updated**: January 15, 2025  
-**Status**: ✅ Production Ready  
-**Maintainer**: Smart Contract Development Team

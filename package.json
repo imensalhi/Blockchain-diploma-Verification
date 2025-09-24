@@ -9,10 +9,7 @@
     "test:verbose": "npx hardhat test --verbose",
     "node": "npx hardhat node",
     "deploy:local": "npx hardhat ignition deploy ignition/modules/Deploy.js --network localhost",
-    "deploy:sepolia": "npx hardhat ignition deploy ignition/modules/Deploy.js --network sepolia",
-    "deploy:sepolia:auto": "node deploy-sepolia.js",
     "verify:deployment": "npx hardhat run scripts/verify-deployment.js --network localhost",
-    "verify:sepolia": "npx hardhat run scripts/verify-deployment.js --network sepolia",
     "utils": "npx hardhat run scripts/utils.js --network localhost",
     "frontend:serve": "cd frontend && python -m http.server 8080",
     "frontend:serve:alt": "npx http-server frontend -p 8080 -c-1",
@@ -40,11 +37,16 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@openzeppelin/contracts": "^5.4.0",
-    "hardhat": "^2.26.0"
+    "autoprefixer": "^10.4.21",
+    "hardhat": "^2.26.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
   },
   "dependencies": {
     "concurrently": "^8.2.2",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "ethers": "^6.15.0",
+    "js-sha3": "^0.9.3"
   },
   "engines": {
     "node": ">=18.0.0"
