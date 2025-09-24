@@ -2,12 +2,12 @@
 
 > **🚀 PRODUCTION READY** - Complete blockchain-based diploma verification system with smart contracts and web interface
 
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](https://github.com/sambett/Blockchain-diploma-Verification)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](https://github.com/imensalhi/Blockchain-diploma-Verification.git)
 [![Tests](https://img.shields.io/badge/Tests-30%2F30%20Passing-brightgreen)](./test)
 [![Network](https://img.shields.io/badge/Network-Localhost%20%7C%20Sepolia-blue)](./hardhat.config.js)
 [![Frontend](https://img.shields.io/badge/Frontend-Production%20Ready-brightgreen)](./frontend)
 
-**🔗 Repository**: https://github.com/sambett/Blockchain-diploma-Verification  
+**🔗 Repository**: https://github.com/imensalhi/Blockchain-diploma-Verification.git
 **📅 Last Updated**: January 15, 2025  
 **✅ Status**: Complete and fully functional
 
@@ -33,7 +33,6 @@ Event Logging: Complete audit trail of all diploma operations
 ├── 📂 contracts/          # Smart contracts (Solidity)
 │   └── DiplomaRegistry.sol
 ├── 📂 frontend/           # Web interface
-│  
 │   
 ├── 📂 scripts/            # Deployment & utility scripts
 ├── 📂 test/              # Smart contract tests
@@ -47,7 +46,7 @@ MetaMask browser extension
 Git
 1. Clone & Setup
 # Clone the repository
-git clone https://github.com/sambett/Blockchain-diploma-Verification.git
+git clone https://github.com/imensalhi/Blockchain-diploma-Verification.git
 cd Blockchain-diploma-Verification
 
 # Install dependencies
