@@ -1,228 +1,351 @@
-# 🎓 Blockchain Diploma Verification System
+# 🎓 Système de Vérification de Diplômes Blockchain
 
-> **🚀 PRODUCTION READY** - Complete blockchain-based diploma verification system with smart contracts and web interface
+> **🚀 PRÊT POUR LA PRODUCTION** - Système complet de vérification de diplômes basé sur blockchain avec contrats intelligents et interface web moderne
 
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](https://github.com/imensalhi/Blockchain-diploma-Verification.git)
-[![Tests](https://img.shields.io/badge/Tests-30%2F30%20Passing-brightgreen)](./test)
-[![Network](https://img.shields.io/badge/Network-Localhost%20%7C%20Sepolia-blue)](./hardhat.config.js)
-[![Frontend](https://img.shields.io/badge/Frontend-Production%20Ready-brightgreen)](./frontend)
+[![Status](https://img.shields.io/badge/Statut-Prêt%20Production-brightgreen)](https://github.com/imensalhi/Blockchain-diploma-Verification.git)
+[![Tests](https://img.shields.io/badge/Tests-30%2F30%20Réussis-brightgreen)](./test)
+[![Réseau](https://img.shields.io/badge/Réseau-Localhost%20%7C%20Sepolia-blue)](./hardhat.config.js)
+[![Frontend](https://img.shields.io/badge/Frontend-React%20%7C%20Vite-brightgreen)](./frontend)
 
-**🔗 Repository**: https://github.com/imensalhi/Blockchain-diploma-Verification.git
-**📅 Last Updated**: January 15, 2025  
-**✅ Status**: Complete and fully functional
+**🔗 Dépôt**: https://github.com/imensalhi/Blockchain-diploma-Verification.git  
+**📅 Dernière mise à jour**: 25 septembre 2025  
+**✅ Statut**: Complet et entièrement fonctionnel
 
+## 🌟 Fonctionnalités
 
-🌟 Features
-🏛️ For Universities
-Authorize Universities: Admins can authorize universities to issue diplomas
-Issue Diplomas: Upload PDF diplomas and record their cryptographic hash on-chain
-Manage Credentials: View all issued diplomas and their verification status
-Privacy-First: Only document hashes are stored on-chain, not personal data
-🔍 For Verifiers
-Instant Verification: Upload a diploma PDF and university name to verify authenticity
-Real-time Results: Get verification results within 2 seconds
-Tamper Detection: Detect any modifications to the original diploma
-Public Access: Anyone can verify diplomas without special permissions
-⚡ Technical Features
-Gas Optimized: Efficient smart contract design minimizing transaction costs
-Scalable Architecture: Modular design supporting multiple universities
-Revocation Support: Universities can revoke compromised diplomas
-Event Logging: Complete audit trail of all diploma operations
-🏗️ Architecture
-📁 diploma_verif/
-├── 📂 contracts/          # Smart contracts (Solidity)
+### 🏛️ Pour les Universités
+- **Autorisation d'universités** : Les administrateurs peuvent autoriser les universités à émettre des diplômes
+- **Émission de diplômes** : Télécharger des diplômes PDF et enregistrer leur empreinte cryptographique sur blockchain
+- **Gestion des certificats** : Visualiser tous les diplômes émis et leur statut de vérification
+- **Confidentialité d'abord** : Seules les empreintes des documents sont stockées sur blockchain, pas les données personnelles
+
+### 🔍 Pour les Vérificateurs
+- **Vérification instantanée** : Télécharger un PDF de diplôme et le nom de l'université pour vérifier l'authenticité
+- **Résultats en temps réel** : Obtenir les résultats de vérification en moins de 2 secondes
+- **Détection de falsification** : Détecter toute modification du diplôme original
+- **Accès public** : Tout le monde peut vérifier des diplômes sans permissions spéciales
+
+### ⚡ Fonctionnalités Techniques
+- **Optimisé pour le gaz** : Conception efficace du contrat intelligent minimisant les coûts de transaction
+- **Architecture évolutive** : Conception modulaire supportant plusieurs universités
+- **Support de révocation** : Les universités peuvent révoquer des diplômes compromis
+- **Journalisation d'événements** : Piste d'audit complète de toutes les opérations de diplômes
+
+## 🏗️ Architecture
+
+```
+diploma_verif/
+├── 📂 contracts/           # Contrats intelligents (Solidity)
 │   └── DiplomaRegistry.sol
-├── 📂 frontend/           # Web interface
-│   
-├── 📂 scripts/            # Deployment & utility scripts
-├── 📂 test/              # Smart contract tests
-├── 📂 ignition/          # Hardhat Ignition deployment modules
+├── 📂 frontend/            # Interface web React + Vite
+│   ├── src/
+│   │   ├── App.jsx        # Application principale
+│   │   ├── components/    # Composants React
+│   │   └── assets/        # Ressources statiques
+│   ├── public/            # Fichiers publics
+│   ├── package.json       # Dépendances frontend
+│   └── vite.config.js     # Configuration Vite
+├── 📂 scripts/            # Scripts de déploiement et utilitaires
+├── 📂 test/              # Tests des contrats intelligents
+├── 📂 ignition/          # Modules de déploiement Hardhat Ignition
 └── 📂 docs/              # Documentation
-🚀 Quick Start
-Prerequisites
-Node.js >= 18.0.0
-npm or yarn
-MetaMask browser extension
-Git
-1. Clone & Setup
-# Clone the repository
+```
+
+## 🚀 Démarrage Rapide
+
+### Prérequis
+- Node.js >= 18.0.0
+- npm ou yarn
+- Extension navigateur MetaMask
+- Git
+
+### 1. Clonage et Configuration
+
+```bash
+# Cloner le dépôt
 git clone https://github.com/imensalhi/Blockchain-diploma-Verification.git
 cd Blockchain-diploma-Verification
 
-# Install dependencies
-npm run setup
-2. Environment Configuration
-# Copy environment template
+# Installer les dépendances du projet principal
+npm install
+```
+
+### 2. Configuration de l'Environnement
+
+```bash
+# Copier le modèle d'environnement
 cp .env.example .env
 
-# Edit .env with your configuration
-# Add your private key for Sepolia deployment (optional)
-3. Development Setup
-# Start local blockchain
+# Éditer .env avec votre configuration
+# Ajouter votre clé privée pour le déploiement Sepolia (optionnel)
+```
+
+### 3. Configuration du Développement
+
+```bash
+# Démarrer la blockchain locale
 npm run node
 
-# Deploy contracts (in a new terminal)
+# Déployer les contrats (dans un nouveau terminal)
 npm run deploy:local
 
-# Start frontend
-npm run frontend:serve
-4. Access Application
-Open your browser and navigate to:
+# Configuration du frontend React
+cd frontend
+npm install
+npm run dev
+```
 
-Frontend: http://localhost:8080
-Local Network: http://127.0.0.1:8545
-📋 Available Scripts
-🔧 Development
-npm run setup              # Install all dependencies
-npm run compile           # Compile smart contracts
-npm run test             # Run contract tests
-npm run test:verbose     # Run tests with detailed output
-🚀 Deployment
-npm run node             # Start local Hardhat network
-npm run deploy:local     # Deploy to local network
-npm run verify:deployment # Verify deployment
-🌐 Frontend
-npm run frontend:serve     # Serve frontend (Python)
-npm run frontend:serve:alt # Serve frontend (http-server)
-🔄 Utilities
-npm run utils            # Run utility scripts
-npm run clean           # Clean artifacts
-npm run clean:all       # Clean all build files
-npm run status          # Check project status
-⚡ Full Development
-npm run dev:full        # Start network + deploy + frontend
-🔧 Configuration
-Network Configuration
-The project supports multiple networks:
+### 4. Accéder à l'Application
 
-Local Development: Hardhat Network (Chain ID: 31337)
-MetaMask Setup
-Add Local Network:
+Ouvrez votre navigateur et naviguez vers :
 
-Network Name: Hardhat Local
-RPC URL: http://127.0.0.1:8545
-Chain ID: 31337
-Currency Symbol: ETH
-Import Test Account: Use one of the private keys from npx hardhat node
+- **Frontend React**: http://localhost:5173 (Vite dev server)
+- **Réseau local**: http://127.0.0.1:8545
 
-📖 Usage Guide
-👨‍💼 Admin Workflow
-Deploy Contract: Admin deploys the DiplomaRegistry contract
-Authorize Universities: Admin grants UNIVERSITY_ROLE to educational institutions
-Monitor System: Track diploma issuance and verification activities
-🏫 University Workflow
-Connect Wallet: University connects with authorized account
-Upload Diploma: Select PDF diploma file
-Issue on Blockchain: System calculates hash and records on-chain
-Share with Student: Provide diploma file to graduate
-🔍 Verification Workflow
-Access Verification Portal: Open the public verification interface
-Upload Diploma: Select the PDF diploma to verify
-Enter University: Input the issuing university name
-Get Results: Receive instant verification status
-Example Verification Result:
-✅ DIPLOMA VERIFIED
-📄 Document: Master_Degree_Computer_Science.pdf
-🏛️ Issuer: University of Sfax
-📅 Issue Date: 2024-09-21
-🔒 Status: Valid & Authentic
-🧪 Testing
-Run Complete Test Suite
+## 📋 Scripts Disponibles
+
+### 🔧 Développement
+```bash
+npm run setup              # Installer toutes les dépendances
+npm run compile           # Compiler les contrats intelligents
+npm run test             # Exécuter les tests des contrats
+npm run test:verbose     # Exécuter les tests avec sortie détaillée
+```
+
+### 🚀 Déploiement
+```bash
+npm run node             # Démarrer le réseau Hardhat local
+npm run deploy:local     # Déployer sur le réseau local
+npm run verify:deployment # Vérifier le déploiement
+```
+
+### 🌐 Frontend React
+```bash
+cd frontend
+npm run dev              # Serveur de développement Vite
+npm run build            # Build de production
+npm run preview          # Prévisualisation du build
+npm run lint             # Vérification du code
+```
+
+### 🔄 Utilitaires
+```bash
+npm run utils            # Exécuter les scripts utilitaires
+npm run clean           # Nettoyer les artefacts
+npm run clean:all       # Nettoyer tous les fichiers de build
+npm run status          # Vérifier le statut du projet
+```
+
+### ⚡ Développement Complet
+```bash
+npm run dev:full        # Démarrer réseau + déploiement + frontend
+```
+
+## 🔧 Configuration
+
+### Configuration Réseau
+Le projet supporte plusieurs réseaux :
+
+- **Développement local** : Réseau Hardhat (Chain ID: 31337)
+- **Testnet Sepolia** : Réseau de test Ethereum
+
+### Configuration MetaMask
+
+**Ajouter le Réseau Local :**
+- Nom du réseau : Hardhat Local
+- URL RPC : http://127.0.0.1:8545
+- ID de chaîne : 31337
+- Symbole de devise : ETH
+
+**Importer un Compte de Test :** Utilisez une des clés privées de `npx hardhat node`
+
+## 📖 Guide d'Utilisation
+
+### 👨‍💼 Flux de Travail Administrateur
+1. **Déployer le Contrat** : L'admin déploie le contrat DiplomaRegistry
+2. **Autoriser les Universités** : L'admin accorde le UNIVERSITY_ROLE aux institutions éducatives
+3. **Surveiller le Système** : Suivre l'émission et la vérification des diplômes
+
+### 🏫 Flux de Travail Université
+1. **Connecter le Portefeuille** : L'université se connecte avec un compte autorisé
+2. **Télécharger le Diplôme** : Sélectionner le fichier PDF du diplôme
+3. **Émettre sur Blockchain** : Le système calcule l'empreinte et l'enregistre sur blockchain
+4. **Partager avec l'Étudiant** : Fournir le fichier de diplôme au diplômé
+
+### 🔍 Flux de Travail Vérification
+1. **Accéder au Portail de Vérification** : Ouvrir l'interface publique de vérification
+2. **Télécharger le Diplôme** : Sélectionner le PDF du diplôme à vérifier
+3. **Entrer l'Université** : Saisir le nom de l'université émettrice
+4. **Obtenir les Résultats** : Recevoir le statut de vérification instantané
+
+#### Exemple de Résultat de Vérification :
+```
+✅ DIPLÔME VÉRIFIÉ
+📄 Document : Master_Informatique_Sciences.pdf
+🏛️ Émetteur : Université de Sfax
+📅 Date d'émission : 21/09/2024
+🔒 Statut : Valide et Authentique
+```
+
+## 🧪 Tests
+
+### Exécuter la Suite de Tests Complète
+```bash
 npm test
-Test Categories
-Unit Tests: Individual function testing
-Integration Tests: Contract interaction testing
-Gas Optimization Tests: Cost efficiency validation
-Security Tests: Access control and vulnerability testing
-Example Test Output
-✅ DiplomaRegistry Tests
-  ✅ Should deploy correctly
-  ✅ Should authorize universities
-  ✅ Should issue diplomas
-  ✅ Should verify diplomas
-  ✅ Should revoke diplomas
-  ✅ Should handle edge cases
-🔐 Security Features
-Smart Contract Security
-Access Control: Role-based permissions using OpenZeppelin
-Reentrancy Protection: Prevents reentrancy attacks
-Input Validation: Comprehensive parameter checking
-Gas Optimization: Efficient storage patterns
-Privacy Protection
-Hash-Only Storage: Only Keccak-256 hashes stored on-chain
-No Personal Data: Student information never touches blockchain
-GDPR Compliant: Right to be forgotten supported
-Audit Trail
-Event Logging: All operations emit events
-Immutable Records: Blockchain-based tamper evidence
-Transparent Verification: Public verification process
-📊 Gas Costs (Optimized)
-Operation	Gas Cost	USD (@ 20 gwei)
-Deploy Contract	~800,000	~$2.40
-Authorize University	~45,000	~$0.14
-Issue Diploma	~55,000	~$0.17
-Verify Diploma	Free	$0.00
-Revoke Diploma	~25,000	~$0.08
-🛠️ Technology Stack
-Blockchain
-Solidity ^0.8.24 - Smart contract language
-Hardhat - Development framework
-OpenZeppelin - Security libraries
-Ethers.js - Ethereum library
-Frontend
-HTML5/CSS3/JavaScript - Core web technologies
-Web3.js - Blockchain interaction
-MetaMask - Wallet integration
-Development Tools
-Node.js - Runtime environment
-npm - Package manager
-Git - Version control
-🤝 Contributing
-We welcome contributions! Please follow these steps:
+```
 
-Fork the repository
-Create a feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
-Development Guidelines
-Follow Solidity style guide
-Add tests for new features
-Update documentation
-Ensure gas optimization
-📚 Documentation
-Smart Contract Documentation
-DiplomaRegistry.sol - Main contract documentation
-API Reference - Complete function reference
-Security Audit - Security considerations
-Architecture Guides
-System Architecture - High-level design
-Database Schema - Data structure design
-Deployment Guide - Production deployment
-🐛 Troubleshooting
-Common Issues
-MetaMask Connection Issues
+### Catégories de Tests
+- **Tests unitaires** : Test de fonctions individuelles
+- **Tests d'intégration** : Test d'interaction des contrats
+- **Tests d'optimisation de gaz** : Validation de l'efficacité des coûts
+- **Tests de sécurité** : Contrôle d'accès et test de vulnérabilités
 
-# Reset MetaMask account
-Settings > Advanced > Reset Account
-Contract Deployment Fails
+#### Exemple de Sortie de Test :
+```
+✅ Tests DiplomaRegistry
+  ✅ Devrait se déployer correctement
+  ✅ Devrait autoriser les universités
+  ✅ Devrait émettre des diplômes
+  ✅ Devrait vérifier les diplômes
+  ✅ Devrait révoquer les diplômes
+  ✅ Devrait gérer les cas limites
+```
 
-# Clean and redeploy
+## 🔐 Fonctionnalités de Sécurité
+
+### Sécurité du Contrat Intelligent
+- **Contrôle d'Accès** : Permissions basées sur les rôles utilisant OpenZeppelin
+- **Protection contre la Rééntrance** : Prévention des attaques de réentrance
+- **Validation d'Entrée** : Vérification complète des paramètres
+- **Optimisation du Gaz** : Modèles de stockage efficaces
+
+### Protection de la Vie Privée
+- **Stockage d'Empreintes Uniquement** : Seules les empreintes Keccak-256 stockées sur blockchain
+- **Aucune Donnée Personnelle** : Les informations étudiants ne touchent jamais la blockchain
+- **Conforme RGPD** : Droit à l'oubli supporté
+
+### Piste d'Audit
+- **Journalisation d'Événements** : Toutes les opérations émettent des événements
+- **Enregistrements Immuables** : Preuve de falsification basée sur blockchain
+- **Vérification Transparente** : Processus de vérification public
+
+## 📊 Coûts de Gaz (Optimisés)
+
+| Opération | Coût en Gaz | EUR (@ 20 gwei) |
+|-----------|-------------|------------------|
+| Déployer Contrat | ~800,000 | ~2,40€ |
+| Autoriser Université | ~45,000 | ~0,14€ |
+| Émettre Diplôme | ~55,000 | ~0,17€ |
+| Vérifier Diplôme | Gratuit | 0,00€ |
+| Révoquer Diplôme | ~25,000 | ~0,08€ |
+
+## 🛠️ Stack Technologique
+
+### Blockchain
+- **Solidity ^0.8.24** - Langage de contrat intelligent
+- **Hardhat** - Framework de développement
+- **OpenZeppelin** - Bibliothèques de sécurité
+- **Ethers.js** - Bibliothèque Ethereum
+
+### Frontend
+- **React 18** - Bibliothèque d'interface utilisateur moderne
+- **Vite** - Outil de build ultra-rapide
+- **JavaScript ES6+** - Langage de programmation moderne
+- **CSS3** - Stylisation avancée
+- **MetaMask** - Intégration de portefeuille
+
+### Outils de Développement
+- **Node.js** - Environnement d'exécution
+- **npm** - Gestionnaire de paquets
+- **Git** - Contrôle de version
+- **ESLint** - Analyse de code statique
+
+## 🤝 Contribution
+
+Nous accueillons les contributions ! Veuillez suivre ces étapes :
+
+1. Fork le dépôt
+2. Créer une branche de fonctionnalité (`git checkout -b feature/fonctionnalite-incroyable`)
+3. Commiter vos changements (`git commit -m 'Ajouter fonctionnalité incroyable'`)
+4. Pousser vers la branche (`git push origin feature/fonctionnalite-incroyable`)
+5. Ouvrir une Pull Request
+
+### Directives de Développement
+- Suivre le guide de style Solidity
+- Ajouter des tests pour les nouvelles fonctionnalités
+- Mettre à jour la documentation
+- Assurer l'optimisation du gaz
+- Respecter les conventions React/JavaScript
+
+## 📚 Documentation
+
+### Documentation du Contrat Intelligent
+- **DiplomaRegistry.sol** - Documentation du contrat principal
+- **Référence API** - Référence complète des fonctions
+- **Audit de Sécurité** - Considérations de sécurité
+
+### Guides d'Architecture
+- **Architecture Système** - Conception de haut niveau
+- **Schéma de Base de Données** - Conception de structure de données
+- **Guide de Déploiement** - Déploiement en production
+
+### Documentation Frontend
+- **Guide des Composants React** - Architecture des composants
+- **Guide Vite** - Configuration et optimisation
+- **Guide de Style** - Conventions CSS et design
+
+## 🐛 Dépannage
+
+### Problèmes Courants
+
+#### Problèmes de Connexion MetaMask
+```bash
+# Réinitialiser le compte MetaMask
+Paramètres > Avancé > Réinitialiser le Compte
+```
+
+#### Échec de Déploiement du Contrat
+```bash
+# Nettoyer et redéployer
 npm run clean:all
 npm run compile
 npm run deploy:local
-Frontend Not Loading
+```
 
-# Check if contracts are deployed
+#### Le Frontend ne se Charge Pas
+```bash
+# Vérifier si les contrats sont déployés
 npm run verify:deployment
-📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-🙏 Acknowledgments
-OpenZeppelin - Security-focused smart contract libraries
-Hardhat Team - Excellent development framework
-Ethereum Foundation - Blockchain platform
-University of Sfax - Academic collaboration and guidance
-Built with ❤️ for the future of education verification
+# Redémarrer le serveur de développement Vite
+cd frontend
+npm run dev
+```
 
-Making diploma verification transparent, secure, and accessible to everyone.
+#### Erreurs de Build Vite
+```bash
+# Nettoyer le cache Vite
+cd frontend
+rm -rf node_modules/.vite
+npm install
+npm run dev
+```
+
+## 📜 Licence
+
+Ce projet est sous licence MIT - voir le fichier LICENSE pour les détails.
+
+## 🙏 Remerciements
+
+- **OpenZeppelin** - Bibliothèques de contrats intelligents axées sur la sécurité
+- **Équipe Hardhat** - Framework de développement excellent
+- **Fondation Ethereum** - Plateforme blockchain
+- **Équipe React** - Bibliothèque d'interface utilisateur moderne
+- **Équipe Vite** - Outil de build révolutionnaire
+- **Université de Sfax** - Collaboration académique et guidance
+
+---
+
+**Construit avec ❤️ pour l'avenir de la vérification de l'éducation**
+
+*Rendre la vérification des diplômes transparente, sécurisée et accessible à tous.*
